@@ -6,7 +6,7 @@ KroneTaxa skal have udviklet et nyt stykke software til at beregne prisen på en
 
 Deres prismodel er rimelig simpel: 8,50 kr/km + 6,25 kr/min + 39 kr
 
-Implementér KroneTaxas prismodel i Taxameter.js
+Implementér klassen Taxamater.js, herunder KroneTaxas prismodel.
 
 ### Opgave 2
 KroneTaxa vil gerne bruge deres system til deres store vogne. Her er prisen: 12 kr/km + 6,67 kr/min + 69 kr.
