@@ -15,11 +15,23 @@ Lav filerne krone-taxa-stor-vogn.js og krone-taxa-stor-vogn.html, og lav Taxamet
 
 
 ### Opgave 3
-KroneTaxas konkurrent CityBilen vil gerne købe dit system. De bruger samme brugergrænseflade, så det er lige til at sætte i deres biler. Dog er deres priser en smule anderledes: 10 kr/km + 7 kr/min. Dog er der en minimumspris på 75 kr.
+KroneTaxas konkurrent CityBilen vil gerne købe dit system. De bruger samme brugergrænseflade, så det er lige til at sætte i deres biler. Dog er deres priser en smule anderledes: 10 kr/km + 7 kr/min, og der er en minimumspris på 75 kr.
 
 Lav filerne city-bilen.js og city-bilen.html, og lav Taxameter.js om så den kan genbruges til at alle 3 systemer.
 
 
 ### Opgave 4
-KroneTaxas små vogne vil gerne være mere konkurrence dygtige på korte ture, og vil gerne ændre deres km pris til:
-5 kr for den første km, derefter 9 kr/km
+KroneTaxas vil gerne være mere konkurrencedygtige på korte ture med normale vogn, og vil gerne ændre deres km pris til:
+5 kr for den første km, derefter 9 kr/km.
+
+Lav de nødvendige ændringer i krone-taxa.js
+
+
+### Bonus opgave 1 (overkommelig)
+Udvid Taxameter med et firmanavn og en tekstbeskrivelse af prismodellen. Dette kræver at start.js bliver ændret en smule.
+
+
+### Bonus opgave 2 (svær)
+Elin Rejser har fået adgang til alle prismodellerne, og deres prismodel er altid den billigste af de andre modeller.
+
+Lav filerne elin-rejser.js og elin-rejser.html og genbrug så meget som mulig kode fra de andre systemer uden at have duplikeret kode.
