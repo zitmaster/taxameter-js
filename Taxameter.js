@@ -1,26 +1,35 @@
 /**
  * Skal have følgende felter
- * - turStartetTidspunkt: et dato objekt for hvornår turen er startet. Hvis turen ikke er startet, er den undefined
- *     hint: brug new Date() for at få nuværende tidspunkt
- * - afstand: hvor lang taxaen har kørt i KM
+ * - turStartetTidspunkt: et dato objekt for hvornår turen er startet. 
+ *   Hvis turen ikke er startet, er den undefined
+ * - afstand: hvor langt taxaen har kørt i KM. Denne værdi sendes til scriptet
+ *   udefra (i dette tilfælde fra funktionen start(Taxameter), som ligger i 
+ *   library-mappen, og som er det script, der styrer applikationen).
  * 
- * Skal have følgende metoder/funktioner
+ * Skal have følgende metoder/funktioner, som alle kaldes fra start.js
  * - startTur(): sætter turStartetTidspunkt til nuværende tidspunkt
- * - slutTur(): sætter turStartetTidspunkt til undefined og afstand til 0
- * - koer(afstand): tæller afstand op med det givet antal km
- * - beregnPris(): returnere prisen beregnet udfra taxaselskabets prissætning
+ * - slutTur(): skal nulstille taxameteret 
+ *   ved at  sætte turStartetTidspunkt til undefined og afstand til 0
+ * - koer(delta_afst): skal tælle afstand op med det ekstra antal km, som
+ *   bilen har kørt siden sidste beregning. 
+ * - beregnPris(): skal returnere prisen beregnet udfra taxaselskabets prissætning
  */
 class Taxameter {
-    turStartetTidspunkt = undefined;
-    afstand = 0;
+
+    constructor() {
+        this.afstand = 0;
+        this.turStartetTidspunkt = undefined;
+    }
 
     startTur() {
+        this.turStartetTidspunkt = new Date();
     }
 
     slutTur() {
+
     }
 
-    koer(afstand) {
+    koer(delta_afst) {
     }
 
     beregnPris() {

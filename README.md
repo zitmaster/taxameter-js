@@ -4,20 +4,20 @@
 ### Opgave 1
 KroneTaxa skal have udviklet et nyt stykke software til at beregne prisen på en taxa tur, og har bedt dig om hjælp. De har allerede et gammelt system til at vise data'en og interagere med systemet - altså skal de bare have hjælp til en lille del af systemet.
 
-Deres prismodel er rimelig simpel: 8,50 kr/km + 6,25 kr/min + 39 kr
+Deres prismodel er rimelig simpel: 8,50 kr/km + 0,061 kr/sek + 39 kr
 
-Implementér klassen Taxamater.js, herunder KroneTaxas prismodel.
+Implementér (dvs. færdiggør, udfyld de tomme funktioner) klassen Taxameter.js, herunder KroneTaxas prismodel.
 
 ### Opgave 2
-KroneTaxa vil gerne bruge deres system til deres store vogne. Her er prisen: 12 kr/km + 6,67 kr/min + 69 kr.
+KroneTaxa vil også gerne bruge systemet til deres store vogne. Her er prisen: 12 kr/km + 6,67 kr/min + 69 kr.
 
-Lav filerne krone-taxa-stor-vogn.js og krone-taxa-stor-vogn.html, og lav Taxameter.js om så den kan genbruges til både normale og store vogne.
+Lav filerne krone-taxa-stor-vogn.js og krone-taxa-stor-vogn.html, og lav Taxameter.js om så den kan genbruges til både normale og store vogne. (Hint: Strategy Pattern. )
 
 
 ### Opgave 3
-KroneTaxas konkurrent CityBilen vil gerne købe dit system. De bruger samme brugergrænseflade, så det er lige til at sætte i deres biler. Dog er deres priser en smule anderledes: 10 kr/km + 7 kr/min, og der er en minimumspris på 75 kr.
+KroneTaxas konkurrent CityBilen vil gerne købe dit system. De bruger samme brugergrænseflade, så det er lige til at sætte i deres biler. Dog er deres priser en smule anderledes: 4,50 kr pr. påbegyndt km + 1,34 kr pr. 10 sekunder, og der er en minimumspris på 75 kr.
 
-Lav filerne city-bilen.js og city-bilen.html, og lav Taxameter.js om så den kan genbruges til at alle 3 systemer.
+Lav filerne city-bilen.js og city-bilen.html, og lav Taxameter.js om så den kan genbruges til alle 3 systemer.
 
 
 ### Opgave 4
@@ -28,7 +28,7 @@ Lav de nødvendige ændringer i krone-taxa.js
 
 
 ### Bonus opgave 1 (overkommelig)
-Udvid Taxameter med et firmanavn og en tekstbeskrivelse af prismodellen. Dette kræver at start.js bliver ændret en smule.
+Udvid Taxameter.js med et firmanavn og en tekstbeskrivelse af prismodellen. Dette kræver at start.js bliver ændret en smule.
 
 
 ### Bonus opgave 2 (svær)
