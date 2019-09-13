@@ -26,7 +26,7 @@ class Taxameter {
     }
 
     slutTur() {
-
+        this.turStartetTidspunkt = undefined;
     }
 
     koer(delta_afst) {
