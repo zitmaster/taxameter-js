@@ -26,13 +26,19 @@ class Taxameter {
     }
 
     slutTur() {
+        this.afstand = 0;
         this.turStartetTidspunkt = undefined;
     }
 
     koer(delta_afst) {
+        this.afstand += delta_afst;
     }
 
     beregnPris() {
-        return 0;
+        if (this.turStartetTidspunkt == undefined){
+            return 0;
+        }else{
+        return (8.5 * (this.afstand)) + (6.25 * (((new Date () - this.turStartetTidspunkt)/1000)/60)+39);
+        }
     }
 }
