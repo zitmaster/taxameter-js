@@ -26,7 +26,7 @@ var clock = new RealClock;
 
 class kronePrisStrategy{
     calculatePrice(afstand, tidGaaet){
-        return (8.5 * (afstand)) + (6.25 * tidGaaet + 39);
+        return (12 * (afstand)) + (6.67 * tidGaaet + 69);
     }
     
 } 
