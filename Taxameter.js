@@ -35,6 +35,7 @@ class Taxameter {
     }
 
     beregnPris() {
+        //Her beregner jeg prisen per minut
         if (this.turStartetTidspunkt == undefined){
             return 0;
         }else{
