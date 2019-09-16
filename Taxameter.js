@@ -31,7 +31,7 @@ class Taxameter {
     }
 
     koer(delta_afst) {
-        this.afstand += delta_afst;
+        this.afstand += delta_afst*5;
     }
 
     beregnPris() {
