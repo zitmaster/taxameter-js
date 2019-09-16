@@ -26,7 +26,7 @@ var clock = new RealClock;
 
 class cityPrisStrategy{
     calculatePrice(afstand, tidGaaet){
-        var price = (12 * (afstand)) + (6.67 * tidGaaet + 69);
+        var price = (4.5 * (afstand)) + (7 * tidGaaet + 72);
         if(price < 75){
             return 75;
         }else{
