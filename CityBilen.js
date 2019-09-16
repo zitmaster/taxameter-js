@@ -24,11 +24,16 @@ class FakeClock{
 var clock = new RealClock;
 
 
-class storKronePrisStrategy{
+class cityPrisStrategy{
     calculatePrice(afstand, tidGaaet){
-        return (8.5 * (afstand)) + (6.25 * tidGaaet + 39);
+        var price = (12 * (afstand)) + (6.67 * tidGaaet + 69);
+        if(price < 75){
+            return 75;
+        }else{
+            return price;
+        }
     }
     
 } 
 
-start(new Taxameter(clock, new storKronePrisStrategy()));
+start(new Taxameter(clock, new cityPrisStrategy()));
