@@ -24,7 +24,7 @@ class FakeClock {
 var clock = new RealClock;
 
 
-class storKronePrisStrategy {
+class kronePrisStrategy {
     calculatePrice(afstand, tidGaaet) {
         var price = (9 * Math.max(afstand - 1, 0));
         var pricsFoesteKm = (5 * Math.min(1, afstand));
@@ -34,4 +34,4 @@ class storKronePrisStrategy {
 
 }
 
-start(new Taxameter(clock, new storKronePrisStrategy()));
+start(new Taxameter(clock, new kronePrisStrategy()));
