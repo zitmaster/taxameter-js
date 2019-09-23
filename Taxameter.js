@@ -19,7 +19,7 @@ class Taxameter {
     //Clock er lige som new Date()
     constructor(clock, prisStrategy) {
         this.prisStrategy = prisStrategy;
-        this.calculatePrice =prisStrategy.calculatePrice;
+        this.calculatePrice = prisStrategy.calculatePrice;
         this.clock = clock;
         this.afstand = 0;
         this.turStartetTidspunkt = undefined;
@@ -35,16 +35,16 @@ class Taxameter {
     }
 
     koer(delta_afst) {
-        this.afstand += delta_afst*5;
+        this.afstand += delta_afst * 5;
     }
 
     beregnPris() {
         //Her beregner jeg prisen per minut
-        if (this.turStartetTidspunkt == undefined){
+        if (this.turStartetTidspunkt == undefined) {
             return 0;
-        }else{
-            var tidGaaet = (((this.clock.now() - this.turStartetTidspunkt)/1000)/60);
-        return this.calculatePrice(this.afstand, tidGaaet);
+        } else {
+            var tidGaaet = (((this.clock.now() - this.turStartetTidspunkt) / 1000) / 60);
+            return this.calculatePrice(this.afstand, tidGaaet);
         }
     }
 }

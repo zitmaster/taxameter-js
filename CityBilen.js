@@ -4,36 +4,36 @@
  * sig at der her blev indsat et
  */
 
- class RealClock{
-    now(){
+class RealClock {
+    now() {
         return new Date();
     }
 }
 
-class FakeClock{
-    constructor(){
+class FakeClock {
+    constructor() {
         this.time = new Date();
     }
-    now(){
+    now() {
         return new Date(this.time.getTime());
     }
-    stilFrem(minutter){
+    stilFrem(minutter) {
         this.time.setMinutes(this.time.getMinutes())
     }
 }
 var clock = new RealClock;
 
 
-class cityPrisStrategy{
-    calculatePrice(afstand, tidGaaet){
+class cityPrisStrategy {
+    calculatePrice(afstand, tidGaaet) {
         var price = (4.5 * (afstand)) + (7 * tidGaaet + 72);
-        if(price < 75){
+        if (price < 75) {
             return 75;
-        }else{
+        } else {
             return price;
         }
     }
-    
-} 
+
+}
 
 start(new Taxameter(clock, new cityPrisStrategy()));
