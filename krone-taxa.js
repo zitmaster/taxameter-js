@@ -26,7 +26,10 @@ var clock = new RealClock;
 
 class storKronePrisStrategy{
     calculatePrice(afstand, tidGaaet){
-        return (8.5 * (afstand)) + (6.25 * tidGaaet + 39);
+        var price = (9 * Math.max(afstand-1,0));
+        var pricsFoesteKm = (5 * Math.min(1,afstand));
+        var prisTid = (6.25 * tidGaaet + 39);
+        return price + pricsFoesteKm + prisTid;
     }
     
 } 
