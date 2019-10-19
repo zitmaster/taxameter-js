@@ -4,34 +4,16 @@
  * sig at der her blev indsat et
  */
 
-class RealClock {
-    now() {
-        return new Date();
+class kroneTaxaPriceStrategy {
+    beregnPris(TidIMin, AfstandKm) {
+        if(AfstandKm <= 1) {
+            return (5 *(AfstandKm)) + (6.25 * TidIMin) + 39;
+        }else{    
+            return ((9 * (AfstandKm-1))+5) + (6.25 * TidIMin) + 39;
+        }
     }
 }
-
-class FakeClock {
-    constructor() {
-        this.time = new Date();
-    }
-    now() {
-        return new Date(this.time.getTime());
-    }
-    stilFrem(minutter) {
-        this.time.setMinutes(this.time.getMinutes())
-    }
-}
-var clock = new RealClock;
-
-
-class kronePrisStrategy {
-    calculatePrice(afstand, tidGaaet) {
-        var price = (9 * Math.max(afstand - 1, 0));
-        var pricsFoesteKm = (5 * Math.min(1, afstand));
-        var prisTid = (6.25 * tidGaaet + 39);
-        return price + pricsFoesteKm + prisTid;
-    }
-
-}
-
-start(new Taxameter(clock, new kronePrisStrategy()));
+const taxameter = new Taxameter(clock, new TaxaPriceStrategy())
+const decoratedTaxameter1 = new SimpleTaxameterDecorator(taxameter);
+const decoratedTaxameter2 = new statisticDecorator(decoratedTaxameter1);
+start(decoratedTaxameter2);

@@ -4,36 +4,53 @@
  * sig at der her blev indsat et
  */
 
-class RealClock {
-    now() {
-        return new Date();
+class CitybilPriceStrategy {
+    beregnPris(turTidMinutter, turAfstand) {
+            var price = (4.5 * (Math.floor(turAfstand)+1) + (7 * turTidMinutter));
+            if (price < 75){
+                return 75;
+            }else{
+                return price;
+            }
     }
 }
-
-class FakeClock {
-    constructor() {
-        this.time = new Date();
+class CityBilDecorator {
+    constructor (taxameter) {
+        this.taxameter = taxameter;
     }
-    now() {
-        return new Date(this.time.getTime());
-    }
-    stilFrem(minutter) {
-        this.time.setMinutes(this.time.getMinutes())
-    }
-}
-var clock = new RealClock;
 
+    getStartetTidspunkt() {
+        return this.taxameter.getStartetTidspunkt();
+    }
 
-class cityPrisStrategy {
-    calculatePrice(afstand, tidGaaet) {
-        var price = (4.5 * (afstand)) + (7 * tidGaaet + 72);
-        if (price < 75) {
-            return 75;
-        } else {
-            return price;
+    get afstand() {
+        return this.taxameter.afstand;
+    }
+
+    startTur() {
+        return this.taxameter.startTur();
+    }
+
+    get minimumAfstandTilbage() {
+        return 2 - this.afstand;
+    }
+
+    slutTur() {
+        if (this.afstand < 2) {
+            alert(`Du har ikke hørt langt nok, du mangler at køre ${this.minimumAfstandTilbage} km`);
+        }else{
+            return this.taxameter.slutTur();
         }
     }
 
-}
+    koer(delta_afst) {
+        return this.taxameter.koer(delta_afst);
+    }
 
-start(new Taxameter(clock, new cityPrisStrategy()));
+    beregnPris() {
+        return this.taxameter.beregnPris();
+    }
+}
+const taxameter = new Taxameter(clock, new CitybilPriceStrategy())
+const decoratedTaxameter3 = new CityBilDecorator(taxameter);
+start(decoratedTaxameter3);
