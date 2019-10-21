@@ -13,7 +13,7 @@ class kroneTaxaPriceStrategy {
         }
     }
 }
-const taxameter = new Taxameter(clock, new TaxaPriceStrategy())
+const taxameter = new Taxameter(clock, new kroneTaxaPriceStrategy())
 const decoratedTaxameter1 = new SimpleTaxameterDecorator(taxameter);
 const decoratedTaxameter2 = new statisticDecorator(decoratedTaxameter1);
 start(decoratedTaxameter2);

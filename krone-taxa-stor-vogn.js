@@ -10,6 +10,6 @@ class storKronePrisStrategy {
     }
 
 }
-const taxameter = new Taxameter(clock, new StorVognPriceStrategy())
+const taxameter = new Taxameter(clock, new storVognPriceStrategy())
 const decoratedTaxameter = new SimpleTaxameterDecorator(taxameter);
 start(decoratedTaxameter);
